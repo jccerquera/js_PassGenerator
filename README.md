@@ -1,1 +1,1 @@
-# js_GenPass
+# js_GeneratorPass
