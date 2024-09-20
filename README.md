@@ -1,1 +1,1 @@
-# js_GeneratorPass
+# js_PassGenerator
