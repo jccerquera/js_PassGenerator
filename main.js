@@ -40,9 +40,13 @@ function generar(){
     const caracterEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);      // Tiene caracteres especiales
 
     if (mayuscula && minuscula && numero && caracterEspecial) {
-        validarcontrasena.textContent = "Contraseña FUERTE";
-    } else if (mayuscula && minuscula) {
-        validarcontrasena.textContent = "Contraseña DEBIL";
+        validarcontrasena.textContent = "Contraseña FUERTE", validarcontrasena.style.color = "green";
+    } else if ((mayuscula && minuscula && numero) || (mayuscula && minuscula && caracterEspecial) || (minuscula && numero && caracterEspecial)) {
+        validarcontrasena.textContent = "Contraseña MEDIA", validarcontrasena.style.color = "orange";
+    } else if (mayuscula || minuscula || numero || caracterEspecial) {
+        validarcontrasena.textContent = "Contraseña DÉBIL", validarcontrasena.style.color = "red";
+    } else {
+        validarcontrasena.textContent = "Contraseña MUY DÉBIL", validarcontrasena.style.color = "darkred";
     }
     
     contraseña.value = password
@@ -53,5 +57,3 @@ function limpiar(){
     contraseña.value = "";
     cantidad.value = "";
 }
-
-
